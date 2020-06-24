@@ -4,17 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.mkitsimple.ktpracticedaggermvvm.data.repositories.MyRepository
+import com.mkitsimple.ktpracticedaggermvvm.domain.AppUsecase
 import com.mkitsimple.ktpracticedaggermvvm.utils.Coroutines
 import kotlinx.coroutines.Job
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(private val repository: MyRepository) : ViewModel() {
+class MainViewModel @Inject constructor() : ViewModel() {
 
 //    @Inject
 //    lateinit var repository: MyRepository
 //    init {
 //        this.repository  = MyRepository()
 //    }
+    @Inject
+    lateinit var repository: MyRepository
 
     private lateinit var job: Job
 
